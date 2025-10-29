@@ -23,25 +23,26 @@ import {
   Phone,
   CheckCircle2,
   ArrowRight,
-  Wrench,
   Euro,
   Calendar,
-  Car,
   Star,
   CircleCheck,
-  AlertCircle,
   Award,
   Sparkles,
   ChevronLeft,
   ChevronRight,
-  Settings,
-  Camera,
-  Truck,
+  FileText,
   Users,
+  TrendingDown,
+  ClipboardCheck,
+  HandshakeIcon,
+  Banknote,
   FileCheck,
-  Zap,
-  Target,
-  ThumbsUp,
+  MessageSquare,
+  HeartHandshake,
+  Percent,
+  BadgeCheck,
+  ShieldCheck,
 } from "lucide-react";
 import { useState, useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -50,16 +51,16 @@ import { cn } from "~/lib/utils";
 
 export function meta() {
   return [
-    { title: "Professioneller Scheibenaustausch – Winglass" },
+    { title: "Versicherungsabwicklung – Winglass" },
     {
       name: "description",
       content:
-        "Schneller und fachgerechter Austausch von Windschutzscheiben, Seitenscheiben und Heckscheiben. Inklusive Kalibrierung und Versicherungsabwicklung.",
+        "Wir übernehmen die komplette Abwicklung mit Ihrer Versicherung. Keine Hochstufung bei Steinschlagschäden, faire Preise auch ohne Kasko.",
     },
   ];
 }
 
-export default function Austausch() {
+export default function Versicherungsabwicklung() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -95,50 +96,50 @@ export default function Austausch() {
   const galleryImages = [
     {
       src: "/images/Bilder/4er/IMG_5426.JPG",
-      alt: "BMW 4er Scheibenaustausch",
+      alt: "Professionelle Beratung",
     },
     {
       src: "/images/Bilder/G-Klasse/IMG_3972.JPG",
-      alt: "Mercedes G-Klasse Windschutzscheibe",
+      alt: "Versicherungsabwicklung",
     },
     {
       src: "/images/Bilder/E-Klasse/IMG_5066.JPG",
-      alt: "Mercedes E-Klasse Service",
+      alt: "Kundenservice",
     },
     {
       src: "/images/slider/DSC09741.jpg",
-      alt: "Professionelle Werkstatt",
+      alt: "Beratungsgespräch",
     },
     {
       src: "/images/slider/DSC09793.jpg",
-      alt: "Moderne Ausstattung",
+      alt: "Vertrauen und Service",
     },
     {
       src: "/images/slider/DSC09828.jpg",
-      alt: "Qualitätsservice",
+      alt: "Zufriedene Kunden",
     },
   ];
 
   const features = [
     {
-      icon: Clock,
-      title: "Innerhalb 24h",
-      description: "Schneller Austausch",
-    },
-    {
       icon: Shield,
-      title: "Versicherung",
-      description: "Komplette Abwicklung",
+      title: "Komplettservice",
+      description: "Wir erledigen alles",
     },
     {
-      icon: Camera,
-      title: "Kalibrierung",
-      description: "Präzise Kamerasysteme",
+      icon: TrendingDown,
+      title: "Kein Rabattverlust",
+      description: "Bei Steinschlägen",
     },
     {
-      icon: Car,
-      title: "Ersatzwagen",
-      description: "Bleiben Sie mobil",
+      icon: Euro,
+      title: "Faire Preise",
+      description: "Auch ohne Kasko",
+    },
+    {
+      icon: Clock,
+      title: "Schnelle Abwicklung",
+      description: "Direkt mit Versicherung",
     },
   ];
 
@@ -146,119 +147,153 @@ export default function Austausch() {
     {
       number: "01",
       icon: Phone,
-      title: "Kontaktaufnahme",
-      description: "Rufen Sie uns an oder vereinbaren Sie online einen Termin",
+      title: "Schadenmeldung",
+      description:
+        "Rufen Sie uns an oder kontaktieren Sie uns online – wir nehmen alle relevanten Daten auf",
     },
     {
       number: "02",
-      icon: FileCheck,
-      title: "Schadensaufnahme",
+      icon: FileText,
+      title: "Versicherungsprüfung",
       description:
-        "Wir prüfen den Schaden und klären mit Ihrer Versicherung ab",
+        "Wir prüfen Ihren Versicherungsschutz und klären die Kostenübernahme",
     },
     {
       number: "03",
-      icon: Settings,
-      title: "Scheibenaustausch",
-      description: "Professioneller Austausch mit hochwertigen Materialien",
+      icon: ClipboardCheck,
+      title: "Terminvereinbarung",
+      description:
+        "Wir vereinbaren einen passenden Termin für die Reparatur oder den Austausch",
     },
     {
       number: "04",
-      icon: Camera,
-      title: "Kalibrierung",
-      description: "Präzise Kalibrierung der Frontkamera und Assistenzsysteme",
+      icon: HandshakeIcon,
+      title: "Durchführung",
+      description:
+        "Wir führen die Arbeiten fachgerecht durch – Sie müssen sich um nichts kümmern",
     },
     {
       number: "05",
-      icon: CircleCheck,
-      title: "Qualitätskontrolle",
-      description: "Abschließende Prüfung und Übergabe Ihres Fahrzeugs",
+      icon: FileCheck,
+      title: "Direktabrechnung",
+      description:
+        "Wir rechnen direkt mit Ihrer Versicherung ab – ohne Mehraufwand für Sie",
     },
   ];
 
   const benefits = [
-    "Austausch aller Autoscheiben (Windschutz-, Seiten-, Heckscheibe)",
-    "Verwendung hochwertiger Originalscheiben",
-    "Modernste Werkzeuge und Technologien",
-    "Fachkenntnisse stets auf dem neuesten Stand",
-    "Langjährige Erfahrung garantiert Qualität",
-    "Präzise Kalibrierung von Frontkamerasystemen",
-    "Komplette Versicherungsabwicklung",
-    "Ersatzwagen während der Reparatur",
+    "Komplette Abwicklung mit Ihrer Versicherung",
+    "Keine Hochstufung bei Steinschlagschäden",
+    "Kein Verlust des Schadenfreiheitsrabatts",
+    "Nur vereinbarte Selbstbeteiligung beim Austausch",
+    "Transparente Kostenaufstellung",
+    "Direktabrechnung mit der Versicherung",
+    "Faire Preise auch für Haftpflichtversicherte",
+    "Individuelle Angebotserstellung",
+  ];
+
+  const insuranceTypes = [
+    {
+      icon: ShieldCheck,
+      title: "Teilkasko",
+      description: "Beste Konditionen für Teilkasko-Versicherte",
+      features: [
+        "Steinschlagreparatur: 0€ Eigenanteil",
+        "Keine Hochstufung des SF-Rabatts",
+        "Scheibenaustausch: nur Selbstbeteiligung",
+        "Komplette Versicherungsabwicklung",
+      ],
+      highlight: true,
+    },
+    {
+      icon: BadgeCheck,
+      title: "Vollkasko",
+      description: "Umfassender Schutz bei Vollkasko-Versicherung",
+      features: [
+        "Steinschlagreparatur: 0€ Eigenanteil",
+        "Keine SF-Rabatt Beeinträchtigung",
+        "Scheibenaustausch: nur Selbstbeteiligung",
+        "Inkl. Kalibrierung der Assistenzsysteme",
+      ],
+      highlight: true,
+    },
+    {
+      icon: Percent,
+      title: "Haftpflicht",
+      description: "Attraktive Konditionen auch ohne Kasko",
+      features: [
+        "Wettbewerbsfähige Preise",
+        "Transparente Kostenaufstellung",
+        "Individuelle Angebotserstellung",
+        "Flexible Zahlungsmöglichkeiten",
+      ],
+      highlight: false,
+    },
   ];
 
   const serviceHighlights = [
     {
-      icon: Target,
-      title: "Präzise Ausführung",
+      icon: HeartHandshake,
+      title: "Persönliche Betreuung",
       description:
-        "Jeder Scheibenaustausch wird mit höchster Präzision durchgeführt, um perfekte Passform und Dichtigkeit zu gewährleisten.",
+        "Wir nehmen uns Zeit für Sie und beraten Sie individuell zu allen Fragen rund um die Versicherungsabwicklung.",
+    },
+    {
+      icon: MessageSquare,
+      title: "Direkte Kommunikation",
+      description:
+        "Wir kommunizieren direkt mit Ihrer Versicherung und halten Sie über den gesamten Prozess auf dem Laufenden.",
+    },
+    {
+      icon: Banknote,
+      title: "Transparente Kosten",
+      description:
+        "Sie erhalten von uns eine detaillierte Kostenaufstellung, bevor wir mit den Arbeiten beginnen.",
     },
     {
       icon: Award,
-      title: "Zertifizierte Qualität",
+      title: "Erfahrung & Kompetenz",
       description:
-        "Wir verwenden ausschließlich hochwertige Materialien und arbeiten nach Herstellervorgaben.",
-    },
-    {
-      icon: Zap,
-      title: "Schneller Service",
-      description:
-        "In den meisten Fällen ist Ihr Fahrzeug bereits am selben Tag wieder einsatzbereit.",
-    },
-    {
-      icon: ThumbsUp,
-      title: "Kundenzufriedenheit",
-      description:
-        "Ihre Zufriedenheit und Sicherheit stehen für uns an erster Stelle. Das bestätigen unsere Kunden.",
+        "Langjährige Erfahrung in der Zusammenarbeit mit allen gängigen Versicherungen garantiert reibungslose Abläufe.",
     },
   ];
 
-  const scheibenTypes = [
+  const whyUs = [
     {
-      title: "Windschutzscheibe",
+      icon: CircleCheck,
+      title: "Kein Papierkram",
       description:
-        "Professioneller Austausch mit präziser Kalibrierung der Fahrerassistenzsysteme",
+        "Wir übernehmen die gesamte Kommunikation und Abwicklung mit Ihrer Versicherung.",
+    },
+    {
+      icon: Clock,
+      title: "Zeitersparnis",
+      description:
+        "Sie sparen wertvolle Zeit – wir kümmern uns um alle Formalitäten.",
+    },
+    {
       icon: Shield,
-      features: [
-        "Frontkamera-Kalibrierung",
-        "Regensensor-Integration",
-        "Head-Up-Display kompatibel",
-      ],
+      title: "Keine Nachteile",
+      description:
+        "Bei Steinschlagschäden bleibt Ihr Schadenfreiheitsrabatt erhalten.",
     },
     {
-      title: "Seitenscheibe",
+      icon: HandshakeIcon,
+      title: "Vertrauensvoll",
       description:
-        "Schneller Austausch von Türscheiben und Dreiecksfenstern aller Fahrzeugtypen",
-      icon: Car,
-      features: [
-        "Elektrische Fensterheber",
-        "Getönte Scheiben",
-        "Alle Fahrzeugmarken",
-      ],
-    },
-    {
-      title: "Heckscheibe",
-      description:
-        "Fachgerechter Einbau inklusive Heizung und Antennenintegration",
-      icon: Wrench,
-      features: [
-        "Heckscheibenheizung",
-        "Antennen-Integration",
-        "Scheibenwischer-Montage",
-      ],
+        "Wir arbeiten mit allen gängigen Versicherungen zusammen und kennen die Prozesse.",
     },
   ];
 
   return (
     <div>
       <PageTitle
-        title="Scheibenaustausch"
-        subtitle="Professioneller Austausch aller Autoscheiben innerhalb von 24 Stunden"
+        title="Versicherungsabwicklung"
+        subtitle="Wir übernehmen die komplette Abwicklung mit Ihrer Versicherung"
         breadcrumbs={[
           { label: "Startseite", href: "/" },
           { label: "Leistungen" },
-          { label: "Austausch" },
+          { label: "Versicherungsabwicklung" },
         ]}
         backgroundImage="/images/slider/DSC09741.jpg"
       />
@@ -270,26 +305,27 @@ export default function Austausch() {
             {/* Left Column - What We Offer */}
             <div>
               <Badge className="mb-4">
-                <Settings className="w-3 h-3 mr-2" />
-                Unsere Leistung
+                <Shield className="w-3 h-3 mr-2" />
+                Unser Service
               </Badge>
               <h2 className="text-3xl font-bold mb-6">
-                Scheibenaustausch vom Profi
+                Unkomplizierte Versicherungsabwicklung
               </h2>
               <p className="text-muted-foreground mb-6">
-                Wir stehen Ihnen zur Seite, egal welche Autoscheibe betroffen
-                ist – sei es die Windschutz-, Seiten- oder Heckscheibe. Unser
-                Team tauscht die Scheibe innerhalb eines Tages aus, verwendet
-                dabei hochwertige Materialien und moderne Werkzeuge.
+                Für teil- oder vollkaskoversicherte Fahrzeuge übernimmt die
+                Versicherung normalerweise die gesamten Reparaturkosten für
+                Steinschlagschäden in der Frontscheibe, ohne den
+                Schadenfreiheitsrabatt zu beeinträchtigen.
+              </p>
+              <p className="text-muted-foreground mb-6">
+                Beim Austausch von Windschutz-, Seiten- oder Heckscheiben fällt
+                für teil- oder vollkaskoversicherte Kunden lediglich die
+                vereinbarte Selbstbeteiligung an.
               </p>
               <p className="text-muted-foreground mb-8">
-                Unsere Fachkenntnisse sind stets auf dem neuesten Stand, und
-                unsere langjährige Erfahrung garantiert einen erfolgreichen
-                Austausch. Wir kümmern uns auch um die genaueste Kalibrierung
-                von Frontkamerasystemen. Die Abwicklung mit Ihrer Versicherung
-                übernehmen wir gerne für Sie, während Sie mobil bleiben können –
-                dank unseres Ersatzwagens. Ihre Sicherheit und Zufriedenheit
-                stehen für uns an erster Stelle.
+                Selbst für Autofahrer mit Haftpflichtversicherung bieten wir
+                wettbewerbsfähige Preise. Gerne erstellen wir Ihnen ein
+                individuelles Angebot.
               </p>
 
               <div className="space-y-3 mb-8">
@@ -325,7 +361,7 @@ export default function Austausch() {
                 <Star className="w-3 h-3 mr-2" />
                 Ablauf
               </Badge>
-              <h2 className="text-3xl font-bold mb-6">So funktioniert's</h2>
+              <h2 className="text-3xl font-bold mb-6">So einfach geht's</h2>
 
               <div className="space-y-4">
                 {processSteps.map((step, index) => (
@@ -355,7 +391,10 @@ export default function Austausch() {
         {/* Features Grid */}
         <section className="py-16 bg-muted/30 -mx-4 px-4">
           <div className="container mx-auto">
-            <SectionTitle badge="Unsere Vorteile" title="Warum Winglass?" />
+            <SectionTitle
+              badge="Ihre Vorteile"
+              title="Stressfrei zur neuen Scheibe"
+            />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map((feature, index) => (
@@ -373,20 +412,33 @@ export default function Austausch() {
           </div>
         </section>
 
-        {/* Scheiben Types Section */}
+        {/* Insurance Types Section */}
         <section className="py-16">
           <SectionTitle
-            badge="Unsere Leistungen"
-            title="Alle Autoscheiben - Ein Ansprechpartner"
-            subtitle="Von der Windschutzscheibe bis zur Heckscheibe – wir sind Ihr Experte für alle Fahrzeugscheiben"
+            badge="Versicherungsarten"
+            title="Für jede Versicherung das richtige Angebot"
+            subtitle="Egal ob Teilkasko, Vollkasko oder Haftpflicht – wir bieten optimale Konditionen"
           />
 
           <div className="grid md:grid-cols-3 gap-8">
-            {scheibenTypes.map((type, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all">
+            {insuranceTypes.map((type, index) => (
+              <Card
+                key={index}
+                className={cn(
+                  "hover:shadow-lg transition-all",
+                  type.highlight && "border-primary bg-primary/5"
+                )}
+              >
                 <CardHeader>
                   <div className="mb-4">
-                    <type.icon className="w-12 h-12 text-primary" />
+                    <type.icon
+                      className={cn(
+                        "w-12 h-12",
+                        type.highlight
+                          ? "text-primary"
+                          : "text-muted-foreground"
+                      )}
+                    />
                   </div>
                   <CardTitle className="text-xl mb-2">{type.title}</CardTitle>
                   <CardDescription className="text-base">
@@ -413,7 +465,7 @@ export default function Austausch() {
           <div className="container mx-auto">
             <SectionTitle
               badge="Qualität & Service"
-              title="Darauf können Sie sich verlassen"
+              title="Darauf können Sie zählen"
             />
 
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -442,74 +494,31 @@ export default function Austausch() {
           </div>
         </section>
 
-        {/* Image Gallery Carousel */}
+        {/* Why Choose Us */}
         <section className="py-16">
-          <div>
-            <SectionTitle
-              badge="Unsere Werkstatt"
-              title="Professionelle Ausstattung"
-            />
+          <SectionTitle
+            badge="Warum Winglass?"
+            title="Ihre Vorteile bei der Versicherungsabwicklung"
+            subtitle="Wir machen Ihnen die Abwicklung so einfach wie möglich"
+          />
 
-            <div className="relative max-w-6xl mx-auto">
-              {/* Embla Carousel */}
-              <div className="overflow-hidden" ref={emblaRef}>
-                <div className="flex">
-                  {galleryImages.map((image, index) => (
-                    <div
-                      key={index}
-                      className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0 px-2"
-                    >
-                      <Card className="overflow-hidden">
-                        <CardContent className="p-0">
-                          <div className="aspect-video relative">
-                            <img
-                              src={image.src}
-                              alt={image.alt}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Navigation Buttons */}
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={scrollPrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-50 rounded-full bg-background/90 backdrop-blur-sm shadow-lg hover:bg-background h-10 w-10 -ml-5"
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whyUs.map((reason, index) => (
+              <Card
+                key={index}
+                className="text-center hover:shadow-lg transition-all"
               >
-                <ChevronLeft className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={scrollNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-50 rounded-full bg-background/90 backdrop-blur-sm shadow-lg hover:bg-background h-10 w-10 -mr-5"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </Button>
-
-              {/* Slide Indicators */}
-              <div className="flex gap-2 justify-center mt-6">
-                {galleryImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => emblaApi?.scrollTo(index)}
-                    className={cn(
-                      "h-2 rounded-full transition-all duration-300",
-                      selectedIndex === index
-                        ? "w-8 bg-primary"
-                        : "w-2 bg-primary/30 hover:bg-primary/50"
-                    )}
-                    aria-label={`Bild ${index + 1} anzeigen`}
-                  />
-                ))}
-              </div>
-            </div>
+                <CardHeader>
+                  <div className="mx-auto mb-4 w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+                    <reason.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg mb-2">{reason.title}</CardTitle>
+                  <CardDescription className="text-sm">
+                    {reason.description}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
         </section>
 
@@ -531,14 +540,14 @@ export default function Austausch() {
                 className="border-b-0 border rounded-lg px-6 bg-card"
               >
                 <AccordionTrigger>
-                  Wie lange dauert ein Scheibenaustausch?
+                  Was muss ich bei einem Steinschlag tun?
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    In den meisten Fällen ist der Austausch innerhalb von 2-4
-                    Stunden abgeschlossen. Bei komplexen Systemen mit
-                    Kalibrierung kann es bis zu einem Tag dauern. Ihr Fahrzeug
-                    ist in der Regel am selben Tag wieder einsatzbereit.
+                    Kontaktieren Sie uns einfach telefonisch oder online. Wir
+                    nehmen alle wichtigen Daten auf und kümmern uns um die
+                    Kommunikation mit Ihrer Versicherung. Sie müssen nichts
+                    weiter unternehmen.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -548,14 +557,13 @@ export default function Austausch() {
                 className="border-b-0 border rounded-lg px-6 bg-card"
               >
                 <AccordionTrigger>
-                  Übernimmt meine Versicherung die Kosten?
+                  Verliere ich meinen Schadenfreiheitsrabatt?
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    Bei Teil- oder Vollkaskoversicherung werden die Kosten in
-                    der Regel übernommen. Wir kümmern uns um die komplette
-                    Abwicklung mit Ihrer Versicherung und beraten Sie gerne zu
-                    allen Fragen rund um die Kostenübernahme.
+                    Nein! Bei Steinschlagschäden an der Frontscheibe bleibt Ihr
+                    Schadenfreiheitsrabatt erhalten. Die Versicherung übernimmt
+                    die Kosten vollständig, ohne dass Sie hochgestuft werden.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -565,15 +573,14 @@ export default function Austausch() {
                 className="border-b-0 border rounded-lg px-6 bg-card"
               >
                 <AccordionTrigger>
-                  Was ist eine Frontkamera-Kalibrierung?
+                  Was kostet mich die Reparatur mit Teilkasko?
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    Moderne Fahrzeuge haben Assistenzsysteme, deren Kameras in
-                    der Windschutzscheibe integriert sind. Nach einem
-                    Scheibentausch müssen diese Systeme neu kalibriert werden,
-                    um einwandfrei zu funktionieren. Wir verfügen über die
-                    neueste Kalibriertechnik für alle Fahrzeugmarken.
+                    Bei Steinschlagreparaturen zahlen Sie in der Regel nichts.
+                    Beim Scheibenaustausch fällt nur Ihre vereinbarte
+                    Selbstbeteiligung an. Den Rest rechnen wir direkt mit Ihrer
+                    Versicherung ab.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -583,14 +590,13 @@ export default function Austausch() {
                 className="border-b-0 border rounded-lg px-6 bg-card"
               >
                 <AccordionTrigger>
-                  Bekomme ich einen Ersatzwagen?
+                  Wie läuft die Abrechnung mit der Versicherung?
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    Ja, wir bieten Ihnen während der Reparaturzeit einen
-                    Ersatzwagen an, damit Sie mobil bleiben. Alternativ können
-                    Sie auch gerne in unseren modernen Räumlichkeiten warten –
-                    WLAN und Getränke stehen kostenlos zur Verfügung.
+                    Wir rechnen direkt mit Ihrer Versicherung ab. Sie müssen
+                    lediglich Ihre Versicherungsdaten angeben und ggf. Ihre
+                    Selbstbeteiligung zahlen. Um den Rest kümmern wir uns.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -600,15 +606,14 @@ export default function Austausch() {
                 className="border-b-0 border rounded-lg px-6 bg-card"
               >
                 <AccordionTrigger>
-                  Verwendet ihr Original-Scheiben?
+                  Was kostet es ohne Kaskoversicherung?
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-muted-foreground">
-                    Wir verwenden ausschließlich hochwertige Scheiben, die den
-                    Herstellervorgaben entsprechen. Je nach Wunsch und
-                    Versicherungsdeckung können wir Original-Scheiben oder
-                    gleichwertige Qualitätsscheiben einbauen. Wir beraten Sie
-                    gerne individuell.
+                    Wir bieten auch für Haftpflicht-Versicherte
+                    wettbewerbsfähige Preise. Kontaktieren Sie uns für ein
+                    individuelles, transparentes Angebot. Wir beraten Sie gerne
+                    zu allen Möglichkeiten.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -622,14 +627,14 @@ export default function Austausch() {
             <Card className="border-primary bg-primary/5">
               <CardContent className="p-12 text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground mb-6">
-                  <Phone className="w-8 h-8" />
+                  <Shield className="w-8 h-8" />
                 </div>
                 <h2 className="text-3xl font-bold mb-4">
-                  Scheibe austauschen lassen?
+                  Wir kümmern uns um Ihre Versicherung
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  Vereinbaren Sie jetzt einen Termin oder rufen Sie uns direkt
-                  an. Wir beraten Sie gerne und kümmern uns um alles Weitere.
+                  Kontaktieren Sie uns jetzt und lassen Sie uns die komplette
+                  Abwicklung übernehmen. Stressfrei und unkompliziert.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button asChild size="lg">

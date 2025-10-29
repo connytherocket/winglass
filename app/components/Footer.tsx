@@ -17,7 +17,7 @@ export function Footer() {
     { name: "10 Gründe", href: "/10-grunde" },
     { name: "Referenzen", href: "/referenzen" },
     { name: "Wissenswert", href: "/wissenswert" },
-    { name: "Unser Standort", href: "/unser-standort" },
+    { name: "Unser Standort", href: "/standorte" },
   ];
 
   const legalLinks = [
@@ -81,13 +81,8 @@ export function Footer() {
                 </a>
               </Button>
               <Button variant="outline" size="icon" className="rounded-full" asChild>
-                <a href="#" aria-label="Instagram">
+                <a href="https://www.instagram.com/winglass.de/" aria-label="Instagram">
                   <Instagram className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button variant="outline" size="icon" className="rounded-full" asChild>
-                <a href="#" aria-label="LinkedIn">
-                  <Linkedin className="h-4 w-4" />
                 </a>
               </Button>
             </div>
