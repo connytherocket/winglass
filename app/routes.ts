@@ -20,11 +20,11 @@ export default [
     "routes/standorte/bietigheim/index.tsx"
   ),
   route("/standorte/herrenberg", "routes/standorte/herrenberg/index.tsx"),
-
   // Über WinGlass (map friendly public paths)
   route("/10-grunde", "routes/ueberwinglass/gruende/index.tsx"),
   route("/kontakt", "routes/ueberwinglass/kontakt/index.tsx"),
   route("/referenzen", "routes/ueberwinglass/referenzen/index.tsx"),
   route("/uber-uns", "routes/ueberwinglass/ueber_uns/index.tsx"),
   route("/wissenswert", "routes/ueberwinglass/wissenswert/index.tsx"),
+  route("/schaden-prüfen", "routes/schaden/index.tsx"),
 ] satisfies RouteConfig;

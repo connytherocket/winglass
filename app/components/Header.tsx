@@ -277,7 +277,7 @@ export function Header() {
             size={isScrolled ? "default" : "lg"}
             className="transition-all"
           >
-            <a href="tel:071424695720">
+            <a href="/schaden-prüfen">
               <Phone className="mr-2 h-4 w-4" />
               Schaden prüfen
             </a>
