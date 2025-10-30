@@ -21,6 +21,7 @@ import { cn } from "~/lib/utils";
 export function Header() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -285,17 +286,17 @@ export function Header() {
         </div>
 
         {/* Mobile Menu - Shadcn Sheet */}
-        <Sheet>
+        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-80 p-0">
+          <SheetContent side="right" className="w-80 p-0" onInteractOutside={(e) => e.preventDefault()}>
             <div className="flex flex-col h-full">
               {/* Logo Header */}
               <div className="px-6 py-6 border-b">
-                <Link to="/" className="flex items-center">
+                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
                   <img
                     src="/logo.png"
                     alt="Winglass Logo"
@@ -316,11 +317,24 @@ export function Header() {
                       <Link
                         key={service.name}
                         to={service.href}
-                        className="block p-2 rounded text-sm hover:text-primary transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block p-3 rounded-lg hover:bg-accent transition-all group"
                       >
-                        {service.name}
+                        <h4 className="font-semibold text-sm group-hover:text-primary transition-colors">
+                          {service.name}
+                        </h4>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          {service.description}
+                        </p>
                       </Link>
                     ))}
+                    <Link
+                      to="/versicherungsabwicklung"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block p-2 text-sm text-primary hover:underline text-center mt-2"
+                    >
+                      Versicherungsabwicklung
+                    </Link>
                   </div>
                 </div>
 
@@ -331,16 +345,32 @@ export function Header() {
                   <h3 className="text-xs font-bold mb-3 text-muted-foreground uppercase tracking-widest">
                     Standorte
                   </h3>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="space-y-2">
                     {locations.map((location) => (
                       <Link
                         key={location.name}
                         to={location.href}
-                        className="block p-2 text-center text-sm rounded hover:bg-accent transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="flex items-start gap-3 p-3 rounded-lg hover:bg-accent transition-all group"
                       >
-                        {location.name}
+                        <MapPin className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-semibold text-sm group-hover:text-primary transition-colors">
+                            {location.name}
+                          </h4>
+                          <p className="text-xs text-muted-foreground mt-0.5">
+                            {location.description}
+                          </p>
+                        </div>
                       </Link>
                     ))}
+                    <Link
+                      to="/standorte"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block p-2 text-sm text-primary hover:underline text-center mt-2"
+                    >
+                      Alle Standorte anzeigen
+                    </Link>
                   </div>
                 </div>
 
@@ -356,9 +386,15 @@ export function Header() {
                       <Link
                         key={item.name}
                         to={item.href}
-                        className="block p-2 text-sm rounded hover:text-primary transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block p-3 rounded-lg hover:bg-accent transition-all group"
                       >
-                        {item.name}
+                        <h4 className="font-semibold text-sm group-hover:text-primary transition-colors">
+                          {item.name}
+                        </h4>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          {item.description}
+                        </p>
                       </Link>
                     ))}
                   </div>
@@ -370,10 +406,10 @@ export function Header() {
               {/* Bottom CTA - Fixed at bottom */}
               <div className="border-t px-6 py-4">
                 <Button asChild className="w-full" size="lg">
-                  <a href="tel:071424695720">
+                  <Link to="/schaden-prüfen" onClick={() => setMobileMenuOpen(false)}>
                     <Phone className="mr-2 h-4 w-4" />
                     Schaden prüfen
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>
