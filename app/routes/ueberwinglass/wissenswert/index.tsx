@@ -508,12 +508,6 @@ export default function Wissenswert() {
                       07142 / 4695720
                     </a>
                   </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link to="/ueberwinglass/kontakt">
-                      <ArrowRight className="mr-2 h-5 w-5" />
-                      Kontakt aufnehmen
-                    </Link>
-                  </Button>
                 </div>
               </CardContent>
             </Card>

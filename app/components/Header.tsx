@@ -14,6 +14,7 @@ import {
   Info,
   PhoneCall,
   Star,
+  Instagram,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "~/lib/utils";
@@ -296,7 +297,11 @@ export function Header() {
             <div className="flex flex-col h-full">
               {/* Logo Header */}
               <div className="px-6 py-6 border-b">
-                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
+                <Link
+                  to="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center"
+                >
                   <img
                     src="/logo.png"
                     alt="Winglass Logo"
@@ -401,16 +406,39 @@ export function Header() {
                 </div>
 
                 <Separator />
+                <h3 className="text-xs font-bold mb-3 text-muted-foreground uppercase tracking-widest">
+                    Soziale Medien
+                  </h3>
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="rounded-full"
+                    asChild
+                  >
+                    <a
+                      href="https://www.instagram.com/winglass.de/"
+                      aria-label="Instagram"
+                    >
+                      <Instagram className="h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+                <Separator />
               </div>
 
               {/* Bottom CTA - Fixed at bottom */}
               <div className="border-t px-6 py-4">
                 <Button asChild className="w-full" size="lg">
-                  <Link to="/schaden-prüfen" onClick={() => setMobileMenuOpen(false)}>
+                  <Link
+                    to="/schaden-prüfen"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
                     <Phone className="mr-2 h-4 w-4" />
                     Schaden prüfen
                   </Link>
                 </Button>
+                
               </div>
             </div>
           </SheetContent>

@@ -22,7 +22,7 @@ export function Footer() {
 
   const legalLinks = [
     { name: "Impressum", href: "/impressum" },
-    { name: "Datenschutzerklärung", href: "/datenschutzerklaerung" },
+    { name: "Datenschutzerklärung", href: "/datenschutz" },
   ];
 
   return (

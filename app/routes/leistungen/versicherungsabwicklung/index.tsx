@@ -338,21 +338,6 @@ export default function Versicherungsabwicklung() {
               </div>
 
               <Separator className="my-8" />
-
-              <div className="flex gap-4">
-                <Button asChild size="lg" className="flex-1">
-                  <a href="tel:071424695720">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Anrufen
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="flex-1">
-                  <Link to="/kontakt">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Termin
-                  </Link>
-                </Button>
-              </div>
             </div>
 
             {/* Right Column - Process */}

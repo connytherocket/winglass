@@ -12,6 +12,8 @@ export default [
     "/versicherungsabwicklung",
     "routes/leistungen/versicherungsabwicklung/index.tsx"
   ),
+  route("/impressum", "routes/rechtliches/impressum/index.tsx"),
+  route("/datenschutz", "routes/rechtliches/datenschutz/index.tsx"),
 
   // Standorte
   route("/standorte", "routes/standorte/index.tsx"),
