@@ -49,6 +49,7 @@ const slides = [
 
 export function Slider() {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [animationKey, setAnimationKey] = useState(0);
   
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { 
@@ -76,6 +77,7 @@ export function Slider() {
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
+    setAnimationKey(prev => prev + 1); // Trigger new animations
   }, [emblaApi]);
 
   useEffect(() => {
@@ -95,14 +97,14 @@ export function Slider() {
           {slides.map((slide) => (
             <div key={slide.id} className="flex-[0_0_100%] min-w-0">
               <div className={cn(
-                "relative h-[500px] md:h-[800px] lg:h-[900px] flex items-center overflow-hidden",
+                "relative h-screen sm:h-[600px] md:h-[700px] lg:h-[800px] xl:h-[900px] flex items-center overflow-hidden",
                 slide.backgroundColor
               )}>
                 {/* Background Image (if available) */}
                 {slide.backgroundImage && (
                   <>
                     <div 
-                      className="absolute inset-0 bg-cover bg-center"
+                      className="absolute inset-0 bg-cover bg-center animate-ken-burns"
                       style={{ backgroundImage: `url(${slide.backgroundImage})` }}
                     />
                     {/* Dark Veil Overlay - Reactbits */}
@@ -121,53 +123,69 @@ export function Slider() {
                 )}
 
                 {/* Content */}
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
                   <div className="max-w-3xl">
                     {/* Subtitle Badge */}
-                    <div className="inline-block mb-4">
-                      <span className={cn(
-                        "px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm border",
-                        slide.backgroundImage 
-                          ? "bg-white/10 text-white border-white/20" 
-                          : "bg-primary/10 text-primary border-primary/20"
-                      )}>
+                    <div className="inline-block mb-3 sm:mb-4">
+                      <span 
+                        key={`badge-${slide.id}-${animationKey}`}
+                        className={cn(
+                          "px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-sm border animate-slide-up-fade",
+                          slide.backgroundImage 
+                            ? "bg-white/10 text-white border-white/20" 
+                            : "bg-primary/10 text-primary border-primary/20"
+                        )}
+                        style={{ animationDelay: '0.1s' }}
+                      >
                         {slide.subtitle}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h1 className={cn(
-                      "text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700",
-                      slide.backgroundImage && "text-white"
-                    )}>
+                    <h1 
+                      key={`title-${slide.id}-${animationKey}`}
+                      className={cn(
+                        "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight animate-slide-up-fade",
+                        slide.backgroundImage && "text-white"
+                      )}
+                      style={{ animationDelay: '0.3s' }}
+                    >
                       {slide.title}
                     </h1>
 
                     {/* Description */}
-                    <p className={cn(
-                      "text-lg md:text-xl mb-8 leading-relaxed max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150",
-                      slide.backgroundImage ? "text-white/90" : "text-muted-foreground"
-                    )}>
+                    <p 
+                      key={`desc-${slide.id}-${animationKey}`}
+                      className={cn(
+                        "text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 leading-relaxed max-w-2xl animate-slide-up-fade",
+                        slide.backgroundImage ? "text-white/90" : "text-muted-foreground"
+                      )}
+                      style={{ animationDelay: '0.5s' }}
+                    >
                       {slide.description}
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-                      <Button asChild size="lg" className="shadow-lg">
+                    <div 
+                      key={`buttons-${slide.id}-${animationKey}`}
+                      className="flex flex-row gap-3 sm:gap-4 animate-slide-up-fade"
+                      style={{ animationDelay: '0.7s' }}
+                    >
+                      <Button asChild size="lg" className="shadow-lg text-base sm:text-lg">
                         <Link to={slide.ctaLink}>
-                          {slide.ctaText}
-                          <ArrowRight className="ml-2 h-5 w-5" />
+                          <span className="truncate">{slide.ctaText}</span>
+                          <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
                         </Link>
                       </Button>
-                      <Button asChild size="lg" variant="outline" className="shadow-lg backdrop-blur-sm">
+                      <Button asChild size="lg" variant="outline" className="shadow-lg backdrop-blur-sm text-base sm:text-lg">
                         {slide.secondaryCtaLink.startsWith('tel:') ? (
                           <a href={slide.secondaryCtaLink}>
-                            <Phone className="mr-2 h-5 w-5" />
-                            {slide.secondaryCtaText}
+                            <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
+                            <span className="truncate">{slide.secondaryCtaText}</span>
                           </a>
                         ) : (
                           <Link to={slide.secondaryCtaLink}>
-                            {slide.secondaryCtaText}
+                            <span className="truncate">{slide.secondaryCtaText}</span>
                           </Link>
                         )}
                       </Button>
@@ -183,8 +201,8 @@ export function Slider() {
         </div>
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between pointer-events-none px-4">
+      {/* Navigation Buttons - Desktop only */}
+      <div className="absolute inset-y-0 left-0 right-0 hidden lg:flex items-center justify-between pointer-events-none px-4">
         <Button
           variant="outline"
           size="icon"
@@ -204,14 +222,14 @@ export function Slider() {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-20">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => scrollTo(index)}
             className={cn(
-              "h-2 rounded-full transition-all duration-300",
-              selectedIndex === index ? "w-8 bg-primary" : "w-2 bg-primary/30 hover:bg-primary/50"
+              "h-1.5 sm:h-2 rounded-full transition-all duration-300 touch-manipulation",
+              selectedIndex === index ? "w-6 sm:w-8 bg-primary" : "w-1.5 sm:w-2 bg-primary/30 hover:bg-primary/50"
             )}
             aria-label={`Go to slide ${index + 1}`}
           />

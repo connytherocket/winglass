@@ -76,11 +76,6 @@ export function Footer() {
             {/* Social Media */}
             <div className="flex gap-2">
               <Button variant="outline" size="icon" className="rounded-full" asChild>
-                <a href="#" aria-label="Facebook">
-                  <Facebook className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button variant="outline" size="icon" className="rounded-full" asChild>
                 <a href="https://www.instagram.com/winglass.de/" aria-label="Instagram">
                   <Instagram className="h-4 w-4" />
                 </a>

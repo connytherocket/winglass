@@ -96,7 +96,10 @@ export default function StandortePage() {
               ))}
             </div>
           </div>
-
+          {/* Google Maps */}
+          <div>
+            <LocationMap ref={mapRef} selectedService={selectedService} />
+          </div>    
           {/* Location Cards - Kompakt über der Karte */}
           <div className="grid md:grid-cols-2 gap-4 mb-8">
             {filteredLocations.map((location) => (
@@ -205,10 +208,7 @@ export default function StandortePage() {
             ))}
           </div>
 
-          {/* Google Maps */}
-          <div>
-            <LocationMap ref={mapRef} selectedService={selectedService} />
-          </div>
+          
         </div>
       </section>
     </div>

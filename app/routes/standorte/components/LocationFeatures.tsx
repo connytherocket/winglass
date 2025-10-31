@@ -14,15 +14,15 @@ export function LocationFeatures({
   badge,
 }: LocationFeaturesProps) {
   return (
-    <section className="py-16 bg-muted/30 -mx-4 px-4">
-      <div className="container mx-auto">
+    <section className="py-16 bg-muted/30 w-screen relative left-1/2 right-1/2 -mx-[50vw]">
+      <div className="container mx-auto px-4">
         <SectionTitle
           badge={badge}
           title={title}
           subtitle="Profitieren Sie von unserem erstklassigen Service"
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
           {features.map((feature, index) => (
             <Card
               key={index}

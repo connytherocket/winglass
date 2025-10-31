@@ -292,7 +292,7 @@ export function Header() {
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-80 p-0" onInteractOutside={(e) => e.preventDefault()}>
+          <SheetContent side="right" className="w-80 p-0">
             <div className="flex flex-col h-full">
               {/* Logo Header */}
               <div className="px-6 py-6 border-b">

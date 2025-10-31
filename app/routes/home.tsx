@@ -158,8 +158,8 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 md:py-32 bg-muted/50">
-        <div className="container mx-auto px-4">
+      <section className="py-20 md:py-32 bg-muted/50 w-screen relative left-1/2 right-1/2 -mx-[50vw]">
+        <div className="container mx-auto px-6">
           <SectionTitle
             badge="Unser Service"
             title="Unser Service auf einen Blick"

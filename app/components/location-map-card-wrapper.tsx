@@ -278,26 +278,20 @@ export const LocationMap = forwardRef<LocationMapRef, LocationMapProps>(
 
     return (
       <div ref={containerRef}>
-        <Card className="overflow-hidden">
-          <CardContent className="p-0">
-            {!apiKey ? (
-              <div className="h-[500px] bg-muted flex items-center justify-center">
-                <p className="text-muted-foreground">
-                  Google Maps API Key fehlt
-                </p>
-              </div>
-            ) : !isLoaded ? (
-              <div className="h-[500px] bg-muted flex items-center justify-center">
-                <div className="text-center">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-                  <p className="text-muted-foreground">Karte wird geladen...</p>
-                </div>
-              </div>
-            ) : (
-              <div ref={mapRef} className="w-full h-[500px]" />
-            )}
-          </CardContent>
-        </Card>
+        {!apiKey ? (
+          <div className="h-[500px] bg-muted flex items-center justify-center">
+            <p className="text-muted-foreground">Google Maps API Key fehlt</p>
+          </div>
+        ) : !isLoaded ? (
+          <div className="h-[500px] bg-muted flex items-center justify-center">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+              <p className="text-muted-foreground">Karte wird geladen...</p>
+            </div>
+          </div>
+        ) : (
+          <div ref={mapRef} className="w-full h-[500px]" />
+        )}
       </div>
     );
   }

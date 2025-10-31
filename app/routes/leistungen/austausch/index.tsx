@@ -302,21 +302,6 @@ export default function Austausch() {
               </div>
 
               <Separator className="my-8" />
-
-              <div className="flex gap-4">
-                <Button asChild size="lg" className="flex-1">
-                  <a href="tel:071424695720">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Anrufen
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="flex-1">
-                  <Link to="/kontakt">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Termin
-                  </Link>
-                </Button>
-              </div>
             </div>
 
             {/* Right Column - Process */}
@@ -353,8 +338,8 @@ export default function Austausch() {
         </section>
 
         {/* Features Grid */}
-        <section className="py-16 bg-muted/30 -mx-4 px-4">
-          <div className="container mx-auto">
+        <section className="py-16 bg-muted/30 w-screen relative left-1/2 right-1/2 -mx-[50vw]">
+          <div className="container mx-auto px-6">
             <SectionTitle badge="Unsere Vorteile" title="Warum Winglass?" />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -409,8 +394,8 @@ export default function Austausch() {
         </section>
 
         {/* Service Highlights */}
-        <section className="py-16 bg-muted/30 -mx-4 px-4">
-          <div className="container mx-auto">
+        <section className="py-16 bg-muted/30 w-screen relative left-1/2 right-1/2 -mx-[50vw]">
+          <div className="container mx-auto px-6">
             <SectionTitle
               badge="Qualität & Service"
               title="Darauf können Sie sich verlassen"
@@ -637,12 +622,6 @@ export default function Austausch() {
                       <Phone className="mr-2 h-5 w-5" />
                       07142 / 4695720
                     </a>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link to="/kontakt">
-                      <ArrowRight className="mr-2 h-5 w-5" />
-                      Online-Termin vereinbaren
-                    </Link>
                   </Button>
                 </div>
               </CardContent>

@@ -389,8 +389,8 @@ export default function Versicherungsabwicklung() {
         </section>
 
         {/* Features Grid */}
-        <section className="py-16 bg-muted/30 -mx-4 px-4">
-          <div className="container mx-auto">
+        <section className="py-16 bg-muted/30 w-screen relative left-1/2 right-1/2 -mx-[50vw]">
+          <div className="container mx-auto px-6">
             <SectionTitle
               badge="Ihre Vorteile"
               title="Stressfrei zur neuen Scheibe"
@@ -461,8 +461,8 @@ export default function Versicherungsabwicklung() {
         </section>
 
         {/* Service Highlights */}
-        <section className="py-16 bg-muted/30 -mx-4 px-4">
-          <div className="container mx-auto">
+        <section className="py-16 bg-muted/30 w-screen relative left-1/2 right-1/2 -mx-[50vw]">
+          <div className="container mx-auto px-6">
             <SectionTitle
               badge="Qualität & Service"
               title="Darauf können Sie zählen"
@@ -643,12 +643,7 @@ export default function Versicherungsabwicklung() {
                       07142 / 4695720
                     </a>
                   </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link to="/kontakt">
-                      <ArrowRight className="mr-2 h-5 w-5" />
-                      Online-Termin vereinbaren
-                    </Link>
-                  </Button>
+
                 </div>
               </CardContent>
             </Card>

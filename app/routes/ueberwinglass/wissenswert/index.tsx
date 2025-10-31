@@ -103,7 +103,7 @@ export default function Wissenswert() {
 
         {/* FAQ Accordion */}
         <section className="py-16">
-          <div className="max-w-4xl mx-auto">
+          <div className="w-full">
             <SectionTitle
               badge="Häufige Fragen"
               title="Alles was Sie wissen müssen"

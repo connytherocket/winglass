@@ -341,21 +341,6 @@ export default function Kalibrierung() {
               </div>
 
               <Separator className="my-8" />
-
-              <div className="flex gap-4">
-                <Button asChild size="lg" className="flex-1">
-                  <a href="tel:071424695720">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Anrufen
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="flex-1">
-                  <Link to="/kontakt">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Termin
-                  </Link>
-                </Button>
-              </div>
             </div>
 
             {/* Right Column - Process */}
@@ -394,8 +379,8 @@ export default function Kalibrierung() {
         </section>
 
         {/* Features Grid */}
-        <section className="py-16 bg-muted/30 -mx-4 px-4">
-          <div className="container mx-auto">
+        <section className="py-16 bg-muted/30 w-screen relative left-1/2 right-1/2 -mx-[50vw]">
+          <div className="container mx-auto px-6">
             <SectionTitle
               badge="Unsere Stärken"
               title="Präzision auf höchstem Niveau"
@@ -453,8 +438,8 @@ export default function Kalibrierung() {
         </section>
 
         {/* Technology Highlights */}
-        <section className="py-16 bg-muted/30 -mx-4 px-4">
-          <div className="container mx-auto">
+        <section className="py-16 bg-muted/30 w-screen relative left-1/2 right-1/2 -mx-[50vw]">
+          <div className="container mx-auto px-6">
             <div className="text-center mb-12">
               <Badge variant="outline" className="mb-4">
                 <Cpu className="w-3 h-3 mr-2" />
@@ -463,7 +448,7 @@ export default function Kalibrierung() {
               <h2 className="text-3xl font-bold">Warum Hella Gutmann?</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 w-full">
               {technologyHighlights.map((highlight, index) => (
                 <Card key={index}>
                   <CardHeader>
@@ -526,8 +511,8 @@ export default function Kalibrierung() {
         </section>
 
         {/* Image Gallery Carousel */}
-        <section className="py-16 bg-muted/30 -mx-4 px-4">
-          <div className="container mx-auto">
+        <section className="py-16 bg-muted/30 w-screen relative left-1/2 right-1/2 -mx-[50vw]">
+          <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <Badge variant="outline" className="mb-4">
                 <Sparkles className="w-3 h-3 mr-2" />
@@ -730,12 +715,6 @@ export default function Kalibrierung() {
                       <Phone className="mr-2 h-5 w-5" />
                       07142 / 4695720
                     </a>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link to="/kontakt">
-                      <ArrowRight className="mr-2 h-5 w-5" />
-                      Online-Termin vereinbaren
-                    </Link>
                   </Button>
                 </div>
               </CardContent>
