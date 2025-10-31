@@ -203,7 +203,7 @@ export default function DatenschutzPage() {
         Viele Datenverarbeitungsvorg&auml;nge sind nur mit Ihrer
         ausdr&uuml;cklichen Einwilligung m&ouml;glich. Sie k&ouml;nnen eine
         bereits erteilte Einwilligung jederzeit widerrufen. Die
-        Rechtm&auml;&szlig;igkeit der bis zum Widerruf erfolgten
+        Rechtm&auml;&szlig;igkeit der bis zum Widerruf erfolgtene
         Datenverarbeitung bleibt vom Widerruf unber&uuml;hrt.
       </p>
       <h3>
